@@ -1,11 +1,15 @@
 export const generateSignatureHTML = (data) => {
   const { name, title, phone, email, images, accent } = data;
-  const left = images.leftBlock || '/left.gif';
-  const icons = images.icons || ['/icons/facebook.png','/icons/linkedin.png','/icons/youtube.png'];
-  const links = ['https://www.facebook.com/watiglobal/','https://www.linkedin.com/company/watiglobal/','https://www.youtube.com/c/watiwhatsappteaminbox/'];
-  const accentColor = accent || '#00E785';
-  const iconHtml = icons.map((s,i)=>`<a href="${links[i]}" target="_blank" rel="noopener noreferrer"><img src="${s}" width="18" style="display:inline-block;margin-right:6px;"></a>`).join('');
-  return `<!doctype html>
+
+  const base = import.meta.env.BASE_URL;
+
+  const left = images.leftBlock || base + "left.gif";
+
+  const icons = images.icons || [
+    base + "icons/facebook.png",
+    base + "icons/linkedin.png",
+    base + "icons/youtube.png"
+  ];
 <html>
   <body>
     <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'DM Sans', Arial, sans-serif; font-size:14px; color:#222;">

@@ -12,14 +12,12 @@ export default function App() {
       if (saved) {
         setData(saved);
       } else {
-        const base = import.meta.env.BASE_URL; // IMPORTANT FOR GITHUB PAGES
-
+        const base = import.meta.env.BASE_URL;
         setData({
           name: "Full Name",
           title: "Designation",
           phone: "+91 123456789",
           email: "you@company.com",
-
           images: {
             leftBlock: base + "left.gif",
             icons: [
@@ -28,7 +26,6 @@ export default function App() {
               base + "icons/youtube.png"
             ]
           },
-
           accent: "#00E785"
         });
       }
@@ -54,12 +51,10 @@ export default function App() {
     container.style.top = "-99999px";
     container.style.opacity = "0";
     container.innerHTML = html;
-
     document.body.appendChild(container);
 
     const range = document.createRange();
     range.selectNodeContents(container);
-
     const sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(range);
@@ -67,8 +62,8 @@ export default function App() {
     try {
       document.execCommand("copy");
       alert("Signature copied! Paste into Gmail → Settings → Signature.");
-    } catch (err) {
-      alert("Copy failed. Try again.");
+    } catch (e) {
+      alert("Copy failed.");
     }
 
     sel.removeAllRanges();
@@ -78,19 +73,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 p-6 font-dmsans">
       <div className="max-w-7xl mx-auto grid grid-cols-12 gap-6">
-        {/* Left Panel */}
         <div className="col-span-12 lg:col-span-4">
           <SignatureForm data={data} onChange={patch} />
-
-          <button
-            onClick={copyHtml}
-            className="mt-4 px-4 py-2 bg-brandgreen text-black font-semibold rounded"
-          >
-            Copy HTML Signature
-          </button>
+          <button onClick={copyHtml} className="mt-4 px-4 py-2 bg-brandgreen text-black font-semibold rounded">Copy HTML Signature</button>
         </div>
-
-        {/* Preview Panel */}
         <div className="col-span-12 lg:col-span-8">
           <div className="bg-white shadow p-6 rounded">
             <h3 className="font-semibold mb-4">Live Preview</h3>

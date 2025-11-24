@@ -1,13 +1,11 @@
 import React from "react";
 import SignaturePreview from "./SignaturePreview";
 
-export default function SignaturePreviewCard(props) {
-  const { name, title, phone, images } = props;
-
+export default function SignaturePreviewCard({ name, title, phone, images }) {
   return (
-    <div className="w-full max-w-[1200px] rounded-2xl border-4 border-black shadow-xl bg-white p-8">
+    <div className="w-full max-w-[800px] rounded-2xl border-4 border-black shadow-xl bg-white p-8">
 
-      {/* -------------------- GREY SKELETON -------------------- */}
+      {/* Grey skeleton */}
       <div className="mb-8">
         <div className="h-4 bg-gray-200 rounded w-1/3 mb-4"></div>
 
@@ -23,9 +21,8 @@ export default function SignaturePreviewCard(props) {
         <div className="h-3 bg-gray-200 rounded w-1/5"></div>
       </div>
 
-      {/* LINE DIVIDER */}
+      {/* Divider */}
       <div className="border-t border-gray-200 pt-6">
-        {/* Embedded final signature preview */}
         <SignaturePreview
           name={name}
           title={title}

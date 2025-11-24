@@ -13,7 +13,7 @@ export default function SignatureForm({ data, onChange }) {
         <input className="border px-3 py-2 rounded" value={data.phone} onChange={(e)=>update('phone', e.target.value)} placeholder="Phone" />
       </div>
 
-      <div className="text-xs text-gray-500 mt-3">Left GIF and social icons are fixed.</div>
+      <div className="text-xs text-gray-500 mt-3">Paste into Gmail → Settings → Signature.</div>
     </div>
   );
 }

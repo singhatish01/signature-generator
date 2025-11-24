@@ -42,7 +42,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
             <td
               style={{
                 verticalAlign: "top",
-                paddingRight: 24, // EXACT 24PX SPACE
+                paddingRight: 12, // EXACT 24PX SPACE
                 width: 120,
               }}
             >

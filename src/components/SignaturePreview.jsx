@@ -1,9 +1,8 @@
 import React from "react";
 
 export default function SignaturePreview({ name, title, phone, images }) {
-  const base = import.meta.env.BASE_URL; // ALWAYS ends with /signature-generator/
+  const base = import.meta.env.BASE_URL;
 
-  // Correct absolute paths
   const left = images?.leftBlock || base + "left.gif";
 
   const icons = images?.icons || [
@@ -14,7 +13,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
 
   const links = [
     "https://www.facebook.com/watiglobal/",
-    "https://www.linkedin.com/company/watiglobal/",
+    "https://www.linkedin.com/company/watigloblal/",
     "https://www.youtube.com/c/watiwhatsappteaminbox/",
   ];
 
@@ -29,14 +28,14 @@ export default function SignaturePreview({ name, title, phone, images }) {
     >
       <table
         cellPadding="0"
-        cellSpacing="24"
+        cellSpacing="0"   // ← FIXED HERE
         border="0"
         style={{ width: "100%", maxWidth: 720 }}
       >
         <tbody>
           <tr>
             {/* LEFT GIF */}
-            <td style={{ verticalAlign: "top", paddingRight: 12 }}>
+            <td style={{ verticalAlign: "top", paddingRight: 8 }}> {/* Tighter */}
               <img
                 src={left}
                 width={120}
@@ -50,7 +49,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
             </td>
 
             {/* RIGHT CONTENT */}
-            <td style={{ verticalAlign: "middle" }}>
+            <td style={{ verticalAlign: "middle", paddingLeft: 0 }}> {/* No left padding */}
               <div style={{ fontWeight: 700, fontSize: 16, color: "#000" }}>
                 {name}
               </div>

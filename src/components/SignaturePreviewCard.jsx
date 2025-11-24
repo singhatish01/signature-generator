@@ -1,6 +1,5 @@
 import React from "react";
 import SignaturePreview from "./SignaturePreview";
-
 export default function SignaturePreviewCard({ name, title, phone, images }) {
   return (
     <div className="w-full max-w-[800px] rounded-2xl border-4 border-black shadow-xl bg-white p-8">

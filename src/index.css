@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --brand-green: #00E785; }
+html,body,#root { height:100%; font-family: 'DM Sans', sans-serif; }

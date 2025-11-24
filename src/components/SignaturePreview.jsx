@@ -36,7 +36,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
         <tbody>
           <tr>
             {/* LEFT GIF */}
-            <td style={{ verticalAlign: "top", paddingRight: 24 }}>
+            <td style={{ verticalAlign: "top", paddingRight: 12 }}>
               <img
                 src={left}
                 width={120}

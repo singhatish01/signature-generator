@@ -29,7 +29,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
     >
       <table
         cellPadding="0"
-        cellSpacing="0"
+        cellSpacing="24"
         border="0"
         style={{ width: "100%", maxWidth: 720 }}
       >

@@ -13,7 +13,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
 
   const links = [
     "https://www.facebook.com/watiglobal/",
-    "https://www.linkedin.com/company/watigloblal/",
+    "https://www.linkedin.com/company/watiglobal/",
     "https://www.youtube.com/c/watiwhatsappteaminbox/",
   ];
 
@@ -28,14 +28,24 @@ export default function SignaturePreview({ name, title, phone, images }) {
     >
       <table
         cellPadding="0"
-        cellSpacing="0"   // ← FIXED HERE
+        cellSpacing="0"
         border="0"
-        style={{ width: "100%", maxWidth: 720 }}
+        style={{
+          width: "100%",
+          maxWidth: 720,
+          tableLayout: "fixed", // prevents auto spacing
+        }}
       >
         <tbody>
           <tr>
             {/* LEFT GIF */}
-            <td style={{ verticalAlign: "top", paddingRight: 8 }}> {/* Tighter */}
+            <td
+              style={{
+                verticalAlign: "top",
+                paddingRight: 24, // EXACT 24PX SPACE
+                width: 120,
+              }}
+            >
               <img
                 src={left}
                 width={120}
@@ -49,13 +59,19 @@ export default function SignaturePreview({ name, title, phone, images }) {
             </td>
 
             {/* RIGHT CONTENT */}
-            <td style={{ verticalAlign: "middle", paddingLeft: 0 }}> {/* No left padding */}
+            <td
+              style={{
+                verticalAlign: "middle",
+                paddingLeft: 0, // no extra spacing
+              }}
+            >
               <div style={{ fontWeight: 700, fontSize: 16, color: "#000" }}>
                 {name}
               </div>
 
               <div style={{ color: "#555", marginTop: 4 }}>{title}</div>
 
+              {/* Website + Phone */}
               <div style={{ marginTop: 8 }}>
                 <a
                   href="https://wati.io"
@@ -84,6 +100,7 @@ export default function SignaturePreview({ name, title, phone, images }) {
                 </a>
               </div>
 
+              {/* Social Icons */}
               <div style={{ marginTop: 10 }}>
                 {icons.map((src, i) => (
                   <a
